@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>frm_recived</class>
- <widget class="QWidget" name="frm_recived">
+ <class>frm_spent</class>
+ <widget class="QWidget" name="frm_spent">
   <property name="geometry">
    <rect>
     <x>0</x>

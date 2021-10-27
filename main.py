@@ -1,7 +1,7 @@
 import sys
 
 from PyQt5.QtWidgets import QApplication, QMainWindow
-from main import
+from mainform import Ui_MainWindow
 
 
 # Наследуемся от виджета из PyQt5.QtWidgets и от класса с интерфейсом
