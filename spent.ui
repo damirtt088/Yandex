@@ -13,7 +13,7 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QTextEdit" name="textEdit">
+  <widget class="QTextEdit" name="txt_gum">
    <property name="geometry">
     <rect>
      <x>90</x>
@@ -46,10 +46,10 @@
     </rect>
    </property>
    <property name="text">
-    <string>Потраченное время (мин.)</string>
+    <string>Потраченное время (часов)</string>
    </property>
   </widget>
-  <widget class="QTextEdit" name="textEdit_2">
+  <widget class="QTextEdit" name="txt_time">
    <property name="geometry">
     <rect>
      <x>150</x>
@@ -57,6 +57,68 @@
      <width>421</width>
      <height>31</height>
     </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn_spt">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>80</y>
+     <width>161</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Рассчитать</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>140</y>
+     <width>151</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Ваши потраченные каллории:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lbl_spt">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>140</y>
+     <width>81</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QTableView" name="tableView">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>220</y>
+     <width>256</width>
+     <height>281</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>185</y>
+     <width>101</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Виды упражнений</string>
    </property>
   </widget>
  </widget>
