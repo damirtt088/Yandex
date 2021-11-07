@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>687</width>
+    <width>679</width>
     <height>439</height>
    </rect>
   </property>
@@ -33,7 +33,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Название блюда</string>
+    <string>Название продукта</string>
    </property>
   </widget>
   <widget class="QLabel" name="lbl_gramm">
@@ -59,7 +59,7 @@
     </rect>
    </property>
   </widget>
-  <widget class="QLabel" name="label_3">
+  <widget class="QLabel" name="lbl_info">
    <property name="geometry">
     <rect>
      <x>190</x>
@@ -75,8 +75,8 @@
   <widget class="QLCDNumber" name="lcd_gramm">
    <property name="geometry">
     <rect>
-     <x>220</x>
-     <y>140</y>
+     <x>230</x>
+     <y>200</y>
      <width>201</width>
      <height>23</height>
     </rect>
@@ -85,8 +85,8 @@
   <widget class="QLabel" name="lbl_kal_gram">
    <property name="geometry">
     <rect>
-     <x>0</x>
-     <y>130</y>
+     <x>10</x>
+     <y>190</y>
      <width>221</width>
      <height>41</height>
     </rect>
@@ -98,8 +98,8 @@
   <widget class="QLCDNumber" name="lcd_recived">
    <property name="geometry">
     <rect>
-     <x>220</x>
-     <y>170</y>
+     <x>230</x>
+     <y>230</y>
      <width>201</width>
      <height>23</height>
     </rect>
@@ -108,8 +108,8 @@
   <widget class="QLabel" name="lbl_recived">
    <property name="geometry">
     <rect>
-     <x>0</x>
-     <y>170</y>
+     <x>10</x>
+     <y>230</y>
      <width>221</width>
      <height>21</height>
     </rect>
@@ -131,79 +131,84 @@
     <string>Рассчитать</string>
    </property>
   </widget>
-  <widget class="QLabel" name="lbl_upset">
+  <widget class="QWidget" name="verticalLayoutWidget">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>220</y>
-     <width>271</width>
-     <height>31</height>
+     <x>0</x>
+     <y>110</y>
+     <width>160</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="lt_product">
+    <item>
+     <widget class="QRadioButton" name="rbtn_meat">
+      <property name="text">
+       <string>Мясо</string>
+      </property>
+      <attribute name="buttonGroup">
+       <string notr="true">btn_grp_product</string>
+      </attribute>
+     </widget>
+    </item>
+    <item>
+     <widget class="QRadioButton" name="rbtn_fish">
+      <property name="text">
+       <string>Морепродукты</string>
+      </property>
+      <attribute name="buttonGroup">
+       <string notr="true">btn_grp_product</string>
+      </attribute>
+     </widget>
+    </item>
+    <item>
+     <widget class="QRadioButton" name="rbtn_milk">
+      <property name="text">
+       <string>Молочные продукты</string>
+      </property>
+      <attribute name="buttonGroup">
+       <string notr="true">btn_grp_product</string>
+      </attribute>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QLabel" name="lbl_error">
+   <property name="geometry">
+    <rect>
+     <x>460</x>
+     <y>200</y>
+     <width>191</width>
+     <height>61</height>
     </rect>
    </property>
    <property name="text">
-    <string>Если нет такого продукта, Вы можете внести его</string>
+    <string/>
    </property>
   </widget>
-  <widget class="QTextEdit" name="txt_grammup">
-   <property name="geometry">
-    <rect>
-     <x>190</x>
-     <y>300</y>
-     <width>291</width>
-     <height>31</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QTextEdit" name="txt_eatup">
-   <property name="geometry">
-    <rect>
-     <x>130</x>
-     <y>250</y>
-     <width>241</width>
-     <height>31</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QLabel" name="lbl_gramm_2">
+  <widget class="QTableWidget" name="tbl_info">
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>300</y>
-     <width>181</width>
-     <height>31</height>
+     <y>270</y>
+     <width>221</width>
+     <height>51</height>
     </rect>
    </property>
-   <property name="text">
-    <string>Каллорий на 100 грамм</string>
+   <property name="rowCount">
+    <number>1</number>
    </property>
-  </widget>
-  <widget class="QLabel" name="lbl_eat_2">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>250</y>
-     <width>121</width>
-     <height>31</height>
-    </rect>
+   <property name="columnCount">
+    <number>2</number>
    </property>
-   <property name="text">
-    <string>Название блюда</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="btn_upset">
-   <property name="geometry">
-    <rect>
-     <x>500</x>
-     <y>260</y>
-     <width>121</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Внести</string>
-   </property>
+   <row/>
+   <column/>
+   <column/>
   </widget>
  </widget>
  <resources/>
  <connections/>
+ <buttongroups>
+  <buttongroup name="btn_grp_product"/>
+ </buttongroups>
 </ui>

@@ -23,7 +23,7 @@
     </rect>
    </property>
   </widget>
-  <widget class="QLabel" name="label">
+  <widget class="QLabel" name="lbl_exe">
    <property name="geometry">
     <rect>
      <x>0</x>
@@ -36,7 +36,7 @@
     <string>Вид упражнения:</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_2">
+  <widget class="QLabel" name="lbl_time">
    <property name="geometry">
     <rect>
      <x>0</x>
@@ -62,8 +62,8 @@
   <widget class="QPushButton" name="btn_spt">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>80</y>
+     <x>170</x>
+     <y>110</y>
      <width>161</width>
      <height>41</height>
     </rect>
@@ -72,56 +72,110 @@
     <string>Рассчитать</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_3">
+  <widget class="QWidget" name="verticalLayoutWidget">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>140</y>
-     <width>151</width>
-     <height>21</height>
+     <x>0</x>
+     <y>80</y>
+     <width>161</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QRadioButton" name="rbtn_sport">
+      <property name="text">
+       <string>Спортивные упражнения</string>
+      </property>
+      <attribute name="buttonGroup">
+       <string notr="true">btn_info</string>
+      </attribute>
+     </widget>
+    </item>
+    <item>
+     <widget class="QRadioButton" name="rbtn_usualy">
+      <property name="text">
+       <string>Повседневыне задачи</string>
+      </property>
+      <attribute name="buttonGroup">
+       <string notr="true">btn_info</string>
+      </attribute>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QTableWidget" name="tbl_spent">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>281</y>
+     <width>256</width>
+     <height>221</height>
+    </rect>
+   </property>
+   <property name="rowCount">
+    <number>1</number>
+   </property>
+   <property name="columnCount">
+    <number>2</number>
+   </property>
+   <row/>
+   <column/>
+   <column/>
+  </widget>
+  <widget class="QLabel" name="lbl_sp">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>190</y>
+     <width>141</width>
+     <height>31</height>
     </rect>
    </property>
    <property name="text">
-    <string>Ваши потраченные каллории:</string>
+    <string>Потраченные каллории:</string>
    </property>
   </widget>
-  <widget class="QLabel" name="lbl_spt">
+  <widget class="QLCDNumber" name="lcd_spent">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>190</y>
+     <width>271</width>
+     <height>41</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
      <x>170</x>
-     <y>140</y>
-     <width>81</width>
-     <height>16</height>
+     <y>80</y>
+     <width>111</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>По умолчанию 1 час</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lbl_error">
+   <property name="geometry">
+    <rect>
+     <x>360</x>
+     <y>80</y>
+     <width>241</width>
+     <height>51</height>
     </rect>
    </property>
    <property name="text">
     <string/>
    </property>
   </widget>
-  <widget class="QTableView" name="tableView">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>220</y>
-     <width>256</width>
-     <height>281</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_4">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>185</y>
-     <width>101</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Виды упражнений</string>
-   </property>
-  </widget>
  </widget>
  <resources/>
  <connections/>
+ <buttongroups>
+  <buttongroup name="btn_info"/>
+ </buttongroups>
 </ui>

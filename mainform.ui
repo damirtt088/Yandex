@@ -53,9 +53,16 @@
       </widget>
      </item>
      <item>
-      <widget class="QLabel" name="lbl_size">
+      <widget class="QPushButton" name="btn_youself">
        <property name="text">
-        <string/>
+        <string>О себе</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btn_add">
+       <property name="text">
+        <string>Изменить данные</string>
        </property>
       </widget>
      </item>
