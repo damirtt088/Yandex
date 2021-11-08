@@ -51,7 +51,7 @@ class Addf(QMainWindow, Ui_Frm_add):
             self.subjec = ''
 
     def do(self, btn):
-        kind = self.txt_name.toPlainText()
+        kind = self.txt_name.toPlainText().lower()
         minkkal = self.txt_minut.toPlainText()
         if not kind:
             self.lbl_error.setText('Что надо-то?')
@@ -70,7 +70,7 @@ class Addf(QMainWindow, Ui_Frm_add):
             if not minkkal or numtr:
                 self.lbl_error.setText('Вы что-то не заполнили')
                 return 0
-            text = f'INSERT INTO {self.subjec} VALUES("{kind}", {minkkal})'
+            text = f'INSERT INTO {self.subjec} VALUES("{kind.lower()}", {minkkal})'
             cur.execute(text)
         if btn.text() == "Изменить":
             for i in minkkal:

@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>881</width>
+    <width>865</width>
     <height>624</height>
    </rect>
   </property>
@@ -24,7 +24,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="main">
      <attribute name="title">
@@ -112,24 +112,87 @@
      <attribute name="title">
       <string>Информация</string>
      </attribute>
-     <widget class="QTableWidget" name="tableWidget">
+     <widget class="QTableWidget" name="tb_info">
       <property name="geometry">
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>421</width>
-        <height>541</height>
+        <width>831</width>
+        <height>221</height>
+       </rect>
+      </property>
+      <property name="columnCount">
+       <number>5</number>
+      </property>
+      <attribute name="horizontalHeaderCascadingSectionResizes">
+       <bool>false</bool>
+      </attribute>
+      <column/>
+      <column/>
+      <column/>
+      <column/>
+      <column/>
+     </widget>
+     <widget class="QCalendarWidget" name="clc_data">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>230</y>
+        <width>391</width>
+        <height>321</height>
        </rect>
       </property>
      </widget>
-     <widget class="QCalendarWidget" name="calendarWidget">
+     <widget class="QLabel" name="lbl_error">
+      <property name="geometry">
+       <rect>
+        <x>390</x>
+        <y>230</y>
+        <width>241</width>
+        <height>111</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_info">
       <property name="geometry">
        <rect>
         <x>430</x>
-        <y>0</y>
-        <width>421</width>
-        <height>321</height>
+        <y>400</y>
+        <width>171</width>
+        <height>61</height>
        </rect>
+      </property>
+      <property name="text">
+       <string>Показать всю статистику</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_del">
+      <property name="geometry">
+       <rect>
+        <x>630</x>
+        <y>400</y>
+        <width>161</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Удалить</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lbl_del">
+      <property name="geometry">
+       <rect>
+        <x>640</x>
+        <y>350</y>
+        <width>191</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Выберете дату и нажмите удалить</string>
       </property>
      </widget>
     </widget>
@@ -140,7 +203,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>881</width>
+     <width>865</width>
      <height>21</height>
     </rect>
    </property>

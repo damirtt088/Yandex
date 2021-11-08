@@ -17,6 +17,8 @@ class Recieved(QMainWindow, Ui_frm_recieved):
         super().__init__()
         self.data = datetime.today()
         self.database = sqlite3.connect('eat.db')
+        self.datainfo = sqlite3.connect('info.db')
+        self.curinfo = self.datainfo.cursor()
         self.cur = self.database.cursor()
         self.product = ''
         self.setupUi(self)
@@ -30,9 +32,18 @@ class Recieved(QMainWindow, Ui_frm_recieved):
             self.product = 'fish'
         if btn.text() == 'Молочные продукты':
             self.product = 'milk'
+        if btn.text() == 'Фрукты и овощи':
+            self.product = 'fruits'
+        text = f'SELECT * FROM {self.product}'
+        info = self.cur.execute(text).fetchall()
+        self.tbl_info.setRowCount(len(info))
+        for i, elem in enumerate(info):
+            for j, val in enumerate(elem):
+                self.tbl_info.setItem(i, j, QTableWidgetItem(str(val)))
+        self.tbl_info.setColumnWidth(1, 100)
 
     def recived(self):
-        eat = self.txt_eat.toPlainText()
+        eat = self.txt_eat.toPlainText().lower()
         gramm = self.txt_gramm.toPlainText()
         numtr = False
         if not eat:
@@ -56,3 +67,12 @@ class Recieved(QMainWindow, Ui_frm_recieved):
             self.lcd_recived.display(info[0] * gramm)
             self.tbl_info.setItem(0, 0, QTableWidgetItem(eat))
             self.tbl_info.setItem(0, 1, QTableWidgetItem(str(info[0])))
+            data = datetime.now().date()
+            search = self.curinfo.execute("""SELECT * FROM info WHERE DATA = ?""", (data,)).fetchone()
+            if not search:
+                self.curinfo.execute("""INSERT INTO info VALUES(?, ?, ?, ?, ?)""", (data, 0, 0, 0, 0))
+                self.datainfo.commit()
+            self.curinfo.execute("""UPDATE info
+                           SET Recieved = Recieved + ?
+                           WHERE DATA = ?""", (info[0] * gramm, data))
+            self.datainfo.commit()
