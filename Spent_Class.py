@@ -9,6 +9,8 @@ from Yourself_Class import WEIGHT
 NUM = '1234567890'
 
 
+
+
 class Spent(QMainWindow, Ui_frm_spent):
     def __init__(self):
         super().__init__()
@@ -18,6 +20,7 @@ class Spent(QMainWindow, Ui_frm_spent):
         self.cur = self.database.cursor()
         self.datainfo = sqlite3.connect('info.db')
         self.curinfo = self.datainfo.cursor()
+        self.WEIGHT = int(self.curinfo.execute("""SELECT * FROM yourself WHERE Name = ?""", ("WEIGHT",)).fetchone()[1])
         self.btn_info.buttonClicked.connect(self.kind)
         self.btn_spt.clicked.connect(self.spent)
 
@@ -36,7 +39,7 @@ class Spent(QMainWindow, Ui_frm_spent):
         self.tbl_spent.setColumnWidth(1, 100)
 
     def spent(self):
-        if not WEIGHT:
+        if not self.WEIGHT:
             self.lbl_error.setText('Сначала заполните информацию о себе')
             return 0
         exe = self.txt_gum.toPlainText().lower()
@@ -54,21 +57,22 @@ class Spent(QMainWindow, Ui_frm_spent):
         if not info:
             self.lbl_error.setText(f"Извините, мы не знаем {exe}")
         else:
-            text = f"SELECT Name FROM {self.exer} WHERE Name = {exe}"
-            info = self.cur.execute(text).fetchall()
-            self.lcd_spent.display(time * info[1] * WEIGHT)
-            self.tbl_spent.setItem(0, 0, info[0])
-            self.tbl_spent.setItem(0, 1, info[1])
+            text = f"SELECT * FROM {self.exer} WHERE Name = '{exe}'"
+            info = self.cur.execute(text).fetchone()
+            self.lcd_spent.display(float(time) * info[1] * self.WEIGHT)
+            self.tbl_spent.setRowCount(1)
+            self.tbl_spent.setItem(0, 0, QTableWidgetItem(info[0]))
+            self.tbl_spent.setItem(0, 1, QTableWidgetItem(str(info[1])))
             data = datetime.now().date()
             search = self.curinfo.execute("""SELECT * FROM info WHERE DATA = ?""", (data,)).fetchone()
             if not search:
                 self.curinfo.execute("""INSERT INTO info VALUES(?, ?, ?, ?, ?)""", (data, 0, 0, 0, 0))
                 self.datainfo.commit()
             self.curinfo.execute("""UPDATE info
-                SET Spentk += ?
-                WHERE DATA = ?""", (time * info[1] * WEIGHT, data))
+                SET Spentk = Spentk + ?
+                WHERE DATA = ?""", (float(time) * info[1] * float(self.WEIGHT), data))
             self.curinfo.execute("""UPDATE info
-                            SET Spenttime += ?
+                            SET Spenttime = Spenttime + ?
                             WHERE DATA = ?""", (time, data))
             self.datainfo.commit()
 

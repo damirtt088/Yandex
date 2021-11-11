@@ -22,6 +22,7 @@ class MyWidget(QMainWindow, Ui_MainWindow):
         self.form_received = Recieved()
         self.add = Addf()
         self.yourself = Yourself()
+
         self.btn_received.clicked.connect(self.recived)
         self.btn_add.clicked.connect(self.add_f)
         self.btn_youself.clicked.connect(self.youer)

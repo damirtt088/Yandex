@@ -4,7 +4,7 @@ import sys
 from PyQt5.QtWidgets import QMainWindow
 from add import Ui_Frm_add
 
-NUM = set(['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'])
+NUM = set(['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', ',', '.'])
 
 
 class Addf(QMainWindow, Ui_Frm_add):
@@ -27,9 +27,9 @@ class Addf(QMainWindow, Ui_Frm_add):
             self.subjec = 'milk'
 
     def kindsport(self, btn):
-        if btn.text == 'Упражнения':
+        if btn.text() == 'Спорт':
             self.subjec = 'sport'
-        if btn.text == 'Повседневные задачи':
+        if btn.text() == 'Повседневные задачи':
             self.subjec = 'usu'
 
     def what(self, btn):

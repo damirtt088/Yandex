@@ -84,7 +84,7 @@ class Ui_frm_recieved(object):
 
     def retranslateUi(self, frm_recieved):
         _translate = QtCore.QCoreApplication.translate
-        frm_recieved.setWindowTitle(_translate("frm_recieved", "Form"))
+        frm_recieved.setWindowTitle(_translate("frm_recieved", "Полученные калории"))
         self.lbl_eat.setText(_translate("frm_recieved", "Название продукта"))
         self.lbl_gramm.setText(_translate("frm_recieved", "Сколько примерно Вы съели(грамм)"))
         self.lbl_info.setText(_translate("frm_recieved", "Если вы не напишете , будет считаться 100гр"))

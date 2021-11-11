@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>Полученные калории</string>
   </property>
   <widget class="QTextEdit" name="txt_eat">
    <property name="geometry">

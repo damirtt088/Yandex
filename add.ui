@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>Изменить данные</string>
   </property>
   <widget class="QLabel" name="lbl_info_main">
    <property name="geometry">
@@ -32,7 +32,7 @@
      <x>0</x>
      <y>150</y>
      <width>160</width>
-     <height>80</height>
+     <height>88</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="lt_product">
@@ -60,6 +60,16 @@
       <attribute name="buttonGroup">
        <string notr="true">btn_gr_eatnm</string>
       </attribute>
+     </widget>
+    </item>
+    <item>
+     <widget class="QRadioButton" name="radioButton">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="text">
+       <string>Фрукты и овощи</string>
+      </property>
      </widget>
     </item>
     <item>
@@ -271,9 +281,9 @@
  <resources/>
  <connections/>
  <buttongroups>
-  <buttongroup name="btn_gr_sport"/>
-  <buttongroup name="btn_gr_main"/>
-  <buttongroup name="btn_gr_eatnm"/>
   <buttongroup name="btn_gr_add"/>
+  <buttongroup name="btn_gr_eatnm"/>
+  <buttongroup name="btn_gr_main"/>
+  <buttongroup name="btn_gr_sport"/>
  </buttongroups>
 </ui>

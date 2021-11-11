@@ -19,7 +19,7 @@ class Ui_Frm_add(object):
         self.lbl_info_main.setGeometry(QtCore.QRect(0, 0, 381, 51))
         self.lbl_info_main.setObjectName("lbl_info_main")
         self.verticalLayoutWidget = QtWidgets.QWidget(Frm_add)
-        self.verticalLayoutWidget.setGeometry(QtCore.QRect(0, 150, 160, 80))
+        self.verticalLayoutWidget.setGeometry(QtCore.QRect(0, 150, 160, 88))
         self.verticalLayoutWidget.setObjectName("verticalLayoutWidget")
         self.lt_product = QtWidgets.QVBoxLayout(self.verticalLayoutWidget)
         self.lt_product.setContentsMargins(0, 0, 0, 0)
@@ -36,6 +36,10 @@ class Ui_Frm_add(object):
         self.rbtn_fish.setObjectName("rbtn_fish")
         self.btn_gr_eatnm.addButton(self.rbtn_fish)
         self.lt_product.addWidget(self.rbtn_fish)
+        self.radioButton = QtWidgets.QRadioButton(self.verticalLayoutWidget)
+        self.radioButton.setEnabled(False)
+        self.radioButton.setObjectName("radioButton")
+        self.lt_product.addWidget(self.radioButton)
         self.rbtn_milk = QtWidgets.QRadioButton(self.verticalLayoutWidget)
         self.rbtn_milk.setEnabled(False)
         self.rbtn_milk.setObjectName("rbtn_milk")
@@ -108,10 +112,11 @@ class Ui_Frm_add(object):
 
     def retranslateUi(self, Frm_add):
         _translate = QtCore.QCoreApplication.translate
-        Frm_add.setWindowTitle(_translate("Frm_add", "Form"))
+        Frm_add.setWindowTitle(_translate("Frm_add", "Изменить данные"))
         self.lbl_info_main.setText(_translate("Frm_add", "Здесь Вы можете изменить и добавить записи о продуктах и упражнениях "))
         self.rbtn_meat.setText(_translate("Frm_add", "Мясо"))
         self.rbtn_fish.setText(_translate("Frm_add", "Морепродукты"))
+        self.radioButton.setText(_translate("Frm_add", "Фрукты и овощи"))
         self.rbtn_milk.setText(_translate("Frm_add", "Молочные продукты"))
         self.rbtn_eat.setText(_translate("Frm_add", "Еда"))
         self.rbtn_exe.setText(_translate("Frm_add", "Упражнения"))

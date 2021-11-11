@@ -55,7 +55,7 @@ class Ui_frm_yourself(object):
 
     def retranslateUi(self, frm_yourself):
         _translate = QtCore.QCoreApplication.translate
-        frm_yourself.setWindowTitle(_translate("frm_yourself", "Form"))
+        frm_yourself.setWindowTitle(_translate("frm_yourself", "О себе"))
         self.lbl_info.setText(_translate("frm_yourself", "Здесь Вы можете заполнить информация о себе"))
         self.lbl_imt_info.setText(_translate("frm_yourself", "Ваш индекс массы тела равен"))
         self.label.setText(_translate("frm_yourself", "При норме от 18,5 до 25"))
